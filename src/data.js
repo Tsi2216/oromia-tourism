@@ -2,7 +2,7 @@ export const destinations = [
   {
     id: 'bale', name: 'Bale Mountains National Park', region: 'Bale, Oromia', category: 'Nature', rating: 4.8, reviews: 124,
     distance: '420 km', time: '6–7 hrs', coords: [6.75, 39.72],
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromia%20IMG%205246%20Ethiopia%20%2838737268055%29.jpg',
+    image: '/images/bale-mountains.jpg',
     description: 'A highland landscape of volcanic peaks, plateaus, forests, lakes and wildlife. The park is known for distinctive ecosystems and the Ethiopian wolf.',
     highlights: ['Wildlife', 'Hiking trails', 'Waterfalls', 'Camping'],
     video: 'https://www.youtube.com/embed/6AA8AlbU9bg', videoSource: 'Visit Oromia',
@@ -15,7 +15,7 @@ export const destinations = [
   {
     id: 'langano', name: 'Lake Langano', region: 'East Shewa, Oromia', category: 'Nature', rating: 4.7, reviews: 98,
     distance: '200 km', time: '3–4 hrs', coords: [7.60, 38.72],
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20Langano%20in%20Oromia%20Ethiopia%2001.jpg',
+    image: '/images/lake-langano.jpg',
     description: 'A striking Rift Valley lake surrounded by hills, open landscapes and lakeside recreation.',
     highlights: ['Lakeside walks', 'Bird watching', 'Swimming', 'Local food'],
     video: null, videoSearch: 'https://www.youtube.com/results?search_query=Lake+Langano+Oromia+Ethiopia+tourism',
@@ -28,7 +28,7 @@ export const destinations = [
   {
     id: 'sof-omar', name: 'Sof Omar Cave', region: 'East Bale, Oromia', category: 'Adventure', rating: 4.6, reviews: 76,
     distance: '520 km', time: '7–8 hrs', coords: [6.90, 40.72],
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20Langano%20in%20Oromia%20Ethiopia%2004.jpg',
+    image: '/images/sof-omar-cave.jpg',
     description: 'A spectacular underground limestone cave system shaped by the Weyib River and connected to a long history of cultural and religious practice.',
     highlights: ['Caves', 'River', 'Photography', 'Heritage'],
     video: 'https://www.youtube.com/embed/LfUAdNEBuF4', videoSource: 'Office of the Prime Minister – Ethiopia',
@@ -67,7 +67,7 @@ export const destinations = [
   {
     id: 'bishoftu', name: 'Bishoftu & Hora Harsadi', region: 'East Shewa, Oromia', category: 'Culture', rating: 4.8, reviews: 110,
     distance: '45 km', time: '1 hr', coords: [8.75, 38.99],
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromia%20IMG%205246%20Ethiopia%20%2838737268055%29.jpg',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Irrecha%2C2015.jpg',
     description: 'A lakeside destination strongly associated with Oromo cultural gatherings and the major Irreecha celebration at Hora Harsadi.',
     highlights: ['Irreecha', 'Lakes', 'Culture', 'Photography'],
     video: null, videoSearch: 'https://www.youtube.com/results?search_query=Irreecha+Hora+Harsadi+Bishoftu+Oromia',
@@ -243,7 +243,7 @@ export const foods = [
     id: 1,
     name: 'Marqaa',
     type: 'Barley porridge · dhadhaa',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromo%20Cultural%20dressing.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Oromo_Cultural_Food.jpg',
     imageAlt: 'Traditional Oromo food vessels and cultural foods',
     source: 'Google Arts & Culture · Visit Oromia · Moti Pictures',
     sourcePage: 'https://artsandculture.google.com/asset/arsi-oromo-traditional-outfits-and-dishes-moti-pictures/tAGKp2PETJWjxA'
@@ -252,7 +252,7 @@ export const foods = [
     id: 2,
     name: 'Marmaree',
     type: 'Arsi snack · wheat · butter',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromo%20Cultural%20dressing.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Oromo_Cultural_Food.jpg',
     imageAlt: 'Traditional Oromo cultural food presentation',
     source: 'Google Arts & Culture · Visit Oromia',
     sourcePage: 'https://artsandculture.google.com/story/the-maaddii-a-table-of-traditional-dishes-shared-with-family-and-friends-visit-oromia/qQUhokB3Y9oKjg'
@@ -261,7 +261,7 @@ export const foods = [
     id: 3,
     name: 'Buna Qalaa',
     type: 'Coffee beans · clarified butter',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromo%20Cultural%20dressing.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Oromo_Dishes.jpg',
     imageAlt: 'Traditional Oromo coffee cultural artefacts',
     source: 'Google Arts & Culture · Visit Oromia · Moti Pictures',
     sourcePage: 'https://artsandculture.google.com/asset/buna-qalaa-moti-pictures/TAFpYgH0kuDiOQ'
@@ -270,7 +270,7 @@ export const foods = [
     id: 4,
     name: 'Traditional Oromo Meal',
     type: 'Maaddii · marqaa · milk',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromo%20Cultural%20dressing.jpg',
+    image: 'https://lh3.googleusercontent.com/ci/AL18g_Rm6sGZLVxIGwrRGe2oU09UhOjx7qvRs6mxFNa5epa0AkdMBkDWnnzJTlWY9pH2uwRRtGXG6Dk',
     imageAlt: 'Traditional Oromo foods, vessels and dress',
     source: 'Google Arts & Culture · Visit Oromia',
     sourcePage: 'https://artsandculture.google.com/story/the-maaddii-a-table-of-traditional-dishes-shared-with-family-and-friends-visit-oromia/qQUhokB3Y9oKjg'

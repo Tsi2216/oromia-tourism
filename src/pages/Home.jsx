@@ -1,11 +1,19 @@
 import { ArrowRight, ChevronRight, Coffee, Compass, Heart, MapPin, Mountain, Play, Sparkles, Utensils } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../components/Logo'
 import DestinationCard from '../components/DestinationCard'
 import { SearchBox } from '../components/TopBar'
 import { culturalSystems, destinations } from '../data'
+
+const heroSlides = [
+  { image: '/images/sof-omar-cave.jpg', alt: 'Sof Omar Cave in Bale, Oromia', credit: 'User supplied photograph' },
+  { image: '/images/lake-langano.jpg', alt: 'Lake Langano in Oromia', credit: 'User supplied photograph' },
+  { image: '/images/bale-mountains.jpg', alt: 'Bale Mountains landscape in Oromia', credit: 'User supplied photograph' },
+  { image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Oromo%20Cultural%20dressing.jpg', alt: 'Oromo people wearing traditional clothing at Irreecha', credit: 'Mekonnen B. Gedefa · Wikimedia Commons' },
+  { image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Irrecha%2C2015.jpg', alt: 'Oromo women celebrating Irreecha at Hora Arsadi', credit: 'Mekonnen B. Gedefa · Wikimedia Commons' }
+]
 
 const heritageSteps = [
   { number: 1, id: 'oda', eyebrow: 'Odaa', title: 'The Odaa Tree', text: 'The sacred odaa marks a place of assembly — a living space where law, memory and community meet.', image: 'https://images.squarespace-cdn.com/content/v1/63048825027c7c4f568683cd/1661252030443-J35CSBHTN8H2T01RC78N/Screen%2BShot%2B2022-08-23%2Bat%2B8.35.58%2Bpm.png', accent: 'Governance · Heritage' },
@@ -16,9 +24,18 @@ const heritageSteps = [
 
 export default function Home() {
   const [heritageIndex, setHeritageIndex] = useState(0)
+  const [heroIndex, setHeroIndex] = useState(0)
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
   const heritage = heritageSteps[heritageIndex]
+  const hero = heroSlides[heroIndex]
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setHeroIndex((current) => (current + 1) % heroSlides.length)
+    }, 4200)
+    return () => window.clearInterval(timer)
+  }, [])
   const submitSearch = () => {
     const q = query.trim()
     navigate(q ? `/explore?q=${encodeURIComponent(q)}` : '/explore')
@@ -38,7 +55,17 @@ export default function Home() {
     </header>
 
     <section className="hero-home hero-home-new">
-      <img src="https://images.squarespace-cdn.com/content/v1/63048825027c7c4f568683cd/1661252041564-1US8HSA8H5VF9LHOPAMN/Screen%2BShot%2B2022-08-23%2Bat%2B8.12.51%2Bpm.png" alt="Oromia highland landscape" />
+      <div className="hero-slideshow" aria-label="Oromia visual story">
+        {heroSlides.map((slide, index) => (
+          <img
+            key={slide.image}
+            className={`hero-slide ${index === heroIndex ? 'is-active' : ''}`}
+            src={slide.image}
+            alt={slide.alt}
+            aria-hidden={index !== heroIndex}
+          />
+        ))}
+      </div>
       <div className="hero-overlay" />
       <div className="hero-grain" />
       <div className="hero-head"><Logo light /><button className="language">EN <span>⌄</span></button></div>
@@ -51,6 +78,12 @@ export default function Home() {
           <a href="#destinations" className="primary-btn light-btn">Begin the journey <ArrowRight size={17} /></a>
           <Link to="/map" className="hero-play"><span><Play size={14} fill="currentColor" /></span> Explore the map</Link>
         </div>
+      </div>
+      <div className="hero-credit">Photo: {hero.credit}</div>
+      <div className="hero-dots" aria-label="Hero image selection">
+        {heroSlides.map((slide, index) => (
+          <button key={slide.image} className={index === heroIndex ? 'active' : ''} onClick={() => setHeroIndex(index)} aria-label={`Show story image ${index + 1}`} />
+        ))}
       </div>
       <div className="hero-scroll"><span>SCROLL TO EXPLORE</span><i></i></div>
       <div className="hero-stamp"><span>OROMIA</span><small>LAND · PEOPLE · MEMORY</small></div>
